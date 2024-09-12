@@ -21,8 +21,7 @@ int	main(int ac, char **av)
 	i = 1;
 	if (ac < 2)
 	{
-		std::cerr << "* LOUD AND UNBEARABLE FEEDBACK NOISE *"
-			<< std::endl;
+		std::cerr << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (1);
 	}
 	std::string input;
