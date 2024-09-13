@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/19 15:37:28 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/09/12 16:00:26 by gyong-si         ###   ########.fr       */
+/*   Created: 2024/09/13 09:12:46 by gyong-si          #+#    #+#             */
+/*   Updated: 2024/09/13 11:18:31 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
-#include <iomanip>
-#include <string>
-#include <sstream>
+#include "PhoneBook.hpp"
 
 // Constructor
 PhoneBook::PhoneBook(void) : _index(0)
@@ -46,7 +43,7 @@ PhoneBook::~PhoneBook(void)
 	<< std::endl;
 }
 
-void	PhoneBook::addContact(void)
+void	PhoneBook::AddContact(void)
 {
 	std::string	firstName, lastName, nickname, phoneNumber, darkestSecret;
 
@@ -104,31 +101,8 @@ void	PhoneBook::addContact(void)
 	this->_index++;
 }
 
-std::string	truncate(const std::string &str, size_t width)
-{
-	if (str.length() > width)
-		return (str.substr(0, width - 1) + '.');
-	return (str);
-}
-
-// returns a string with n number of spaces
-std::string add_space(int n)
-{
-	if (n <= 0)
-		return "";
-	return (std::string(n, ' '));
-}
-
-std::string intToString(int num)
-{
-	std::stringstream ss;
-
-	ss << num;
-	return (ss.str());
-}
-
 // lets display the 4 columns first
-void	PhoneBook::searchContact(void)
+void	PhoneBook::SearchContact(void)
 {
 	const int	columnWidth = 10;
 	int			i;
@@ -179,7 +153,7 @@ void	PhoneBook::searchContact(void)
 		std::cout << "Invalid index. Please try again." << std::endl;
 }
 
-void	PhoneBook::addMockContacts(void)
+void	PhoneBook::AddMockContacts(void)
 {
 	contacts[0].setFirstName("John");
 	contacts[0].setLastName("Doe");

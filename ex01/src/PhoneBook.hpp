@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/19 15:37:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/09/12 15:41:55 by gyong-si         ###   ########.fr       */
+/*   Created: 2024/09/13 09:12:53 by gyong-si          #+#    #+#             */
+/*   Updated: 2024/09/13 09:28:20 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define PHONEBOOK_HPP
 
 #include <iostream>
+#include <iomanip>
+#include <string>
 #include "Contact.hpp"
-#include "Phonebook_utils.hpp"
+#include "PhoneBook_Utils.hpp"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"      /* Red */

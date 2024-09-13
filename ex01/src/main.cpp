@@ -6,15 +6,14 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 11:11:08 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/09/10 11:51:29 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/09/13 09:26:19 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int	main(void)
 {
-	// When the program starts it will create a phonebook object
 	PhoneBook	pb1;
 	std::string	str;
 
