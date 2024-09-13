@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 09:12:53 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/09/13 09:28:20 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/09/13 12:11:59 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ class PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 
-		void		addContact(void);
-		void		searchContact(void);
-		void		addMockContacts(void);
+		void		AddContact(void);
+		void		SearchContact(void);
+		void		AddMockContacts(void);
 };
 
 #endif

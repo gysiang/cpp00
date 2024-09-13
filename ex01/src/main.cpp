@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 11:11:08 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/09/13 09:26:19 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/09/13 12:16:34 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	main(void)
 
 	while (str != "EXIT")
 	{
-		std::cout << "Enter a command" << std::endl;
+		std::cout << "Enter a command: ADD, SEARCH, EXIT" << std::endl;
 		std::getline(std::cin, str);
 		if (str == "ADD")
-			pb1.addContact();
+			pb1.AddContact();
 		else if (str == "SEARCH")
-			pb1.searchContact();
+			pb1.SearchContact();
 		else if (str == "EXIT")
 			break;
 		else

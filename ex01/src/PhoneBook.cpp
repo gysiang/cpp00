@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 09:12:46 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/09/13 11:18:31 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/09/13 12:27:51 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ PhoneBook::PhoneBook(void) : _index(0)
 	std::cout <<
 		"--------------------------------------------------------------\n"
 		<< std::endl;
-	addMockContacts();
+	AddMockContacts();
 }
 
 // Destructor
@@ -47,6 +47,9 @@ void	PhoneBook::AddContact(void)
 {
 	std::string	firstName, lastName, nickname, phoneNumber, darkestSecret;
 
+	std::cout << std::endl;
+	if (this->_index > 7)
+		std::cout << "Warning: Contact of " << this->contacts[this->_index % 8].get_firstName() << " will be overwritten." << std::endl;
 	while (true)
 	{
 		std::cout << "Enter first name: ";
@@ -99,9 +102,9 @@ void	PhoneBook::AddContact(void)
 	contacts[this->_index % 8].setDarkestSecret(darkestSecret);
 	std::cout << "Contact added at index: " << this->_index % 8 << std::endl;
 	this->_index++;
+	std::cout << std::endl;
 }
 
-// lets display the 4 columns first
 void	PhoneBook::SearchContact(void)
 {
 	const int	columnWidth = 10;
@@ -136,21 +139,34 @@ void	PhoneBook::SearchContact(void)
 		}
 		i++;
 	}
-	std::cout << "Enter the index of the contact to view details: ";
-	std::cin >> index;
-	std::cin.ignore();
-	if (index >= 0 && index < 8 && !contacts[index].get_firstName().empty())
+	std::cout << "|-------------------------------------------|" << std::endl;
+	while (true)
 	{
-		std::cout << std::endl;
-		std::cout << "First Name: " << contacts[index].get_firstName() << std::endl;
-		std::cout << "Last Name: " << contacts[index].get_lastName() << std::endl;
-		std::cout << "Nickname: " << contacts[index].get_nickName() << std::endl;
-		std::cout << "Phone Number: " << contacts[index].get_phoneNum() << std::endl;
-		std::cout << "Darkest Secret: " << contacts[index].get_darkestSecret() << std::endl;
-		std::cout << std::endl;
+		std::cout << "Enter the index of the contact to view details: ";
+		std::cin >> index;
+		if (std ::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(256, '\n');
+			std::cout << "Invalid input. Please enter a number between 0 and 7." << std::endl;
+		}
+		else if (index < 0 || index > 7)
+			std::cout << "Invalid index. Please enter a number from 0 to 7" << std::endl;
+		else if (!contacts[index].get_firstName().empty())
+		{
+			std::cin.ignore();
+			std::cout << std::endl;
+			std::cout << "First Name: " << contacts[index].get_firstName() << std::endl;
+			std::cout << "Last Name: " << contacts[index].get_lastName() << std::endl;
+			std::cout << "Nickname: " << contacts[index].get_nickName() << std::endl;
+			std::cout << "Phone Number: " << contacts[index].get_phoneNum() << std::endl;
+			std::cout << "Darkest Secret: " << contacts[index].get_darkestSecret() << std::endl;
+			std::cout << std::endl;
+			break;
+		}
+		else
+			std::cout << "Error. Contact Not Found" << std::endl;
 	}
-	else
-		std::cout << "Invalid index. Please try again." << std::endl;
 }
 
 void	PhoneBook::AddMockContacts(void)
