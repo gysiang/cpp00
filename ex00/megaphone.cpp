@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 12:57:16 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/07/18 13:09:25 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/22 01:15:13 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	i = 1;
 	if (ac < 2)
 	{
-		std::cerr << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		std::cerr << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n" << std::endl;
 		return (1);
 	}
 	std::string input;

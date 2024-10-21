@@ -6,13 +6,13 @@
 #    By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/19 11:35:19 by gyong-si          #+#    #+#              #
-#    Updated: 2024/07/19 11:39:46 by gyong-si         ###   ########.fr        #
+#    Updated: 2024/10/22 01:13:20 by gyong-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++11
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 TARGET = megaphone
 
@@ -32,6 +32,8 @@ clean:
 	rm -f $(OBJS)
 
 fclean :
-	rm rf $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(TARGET)
 
-.PHONY: all clean
+re: fclean all
+
+.PHONY: all clean fclean re
