@@ -11,12 +11,11 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-#include <algorithm>
 
 int	main(int ac, char **av)
 {
 	int	i;
+	int j;
 
 	i = 1;
 	if (ac < 2)
@@ -24,15 +23,16 @@ int	main(int ac, char **av)
 		std::cerr << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n" << std::endl;
 		return (1);
 	}
-	std::string input;
-	while (i < ac)
+	while (av[i])
 	{
-		input += av[i];
-		if (i < ac - 1)
-			input += " ";
+		j = 0;
+		while (av[i][j])
+		{
+			std::cout << (char)std::toupper(av[i][j]);
+			j++;
+		}
 		i++;
 	}
-	std::transform(input.begin(), input.end(), input.begin(), ::toupper);
-	std::cout << input << std::endl;
+	std::cout << std::endl;
 	return (0);
 }
